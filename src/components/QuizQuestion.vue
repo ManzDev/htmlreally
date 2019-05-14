@@ -74,8 +74,14 @@ export default {
     check(pressed) {
       this.$root.times.push(this.time);
       this.$root.answers.push(pressed);
-      if (pressed === this.solution)
-        this.$root.score += 20;
+      if (pressed === this.solution) {
+        if (this.time > 60)
+          this.$root.score += 5;
+        else if (this.time > 30)
+          this.$root.score += 10;
+        else // <= 30
+          this.$root.score += 20;
+      }
       this.currentLevel++;
       event.target.blur();
     },
