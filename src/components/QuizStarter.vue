@@ -2,12 +2,12 @@
   <div class="starter">
     <div v-if="phase == 0">
       <h1>HTML5 is <span>easy</span>... Really?</h1>
-      <p>¡Hola! Si estás por aquí, probablemente es por alguna de las siguientes razones:</p>
+      <p>¡Hola! Si has llegado hasta aquí, probablemente ha sido por alguna de las siguientes razones:</p>
       <ul class="xs">
         <li><span>🙋‍♂️</span> Encontraste este minijuego en Internet (<em>¡desde un enlace HTML!</em>).</li>
-        <li><span>👨‍🎓</span> Conoces a <a href="https://twitter.com/Manz">Manz</a> y te ha dado la lata para que hagas este test.</li>
+        <li><span>👨‍🎓</span> Conoces a <a href="https://twitter.com/Manz">Manz</a> y te ha insistido para que hagas este test.</li>
         <li><span>🤷‍♂️</span> Has dicho a alguien la frase <i>«¿HTML? ¡HTML es fácil!</i> y duda de tu criterio.</li>
-        <li><span>🤦</span> Has dicho a alguien la frase <i>«HTML no es un lenguaje de programación»</i>, y aunque eso es cierto, esta persona piensa que puedes estar menospreciando algo que quizás ni comprendes.</li>
+        <li><span>🤦</span> Has dicho a alguien la frase <i>«HTML no es un lenguaje de programación»</i>, y aunque eso es cierto, esta persona piensa que podrías estar menospreciando algo que quizás no comprendes.</li>
       </ul>
       <button @click="next()">
         Siguiente
@@ -15,7 +15,7 @@
     </div>
     <div v-if="phase == 1">
       <p class="xs">
-        Efectivamente, HTML es un lenguaje de marcado (<i>no un lenguaje de programación</i>) y con dicho lenguaje está hecha la base de cualquier web. Aunque sea mucho más difícil aprender programación, <strong>saber programar no implica saber utilizar HTML adecuadamente</strong>.
+        Efectivamente, HTML es un lenguaje de marcado <i>—no un lenguaje de programación—</i> y con dicho lenguaje está hecha la base de cualquier web. Aunque sea mucho más difícil aprender programación, <strong>saber programar no implica saber escribir HTML adecuadamente</strong>: semántica, SEO, sintaxis, fallbacks, código obsoleto, compatibilidad entre navegadores, malas prácticas, etc...
       </p>
 
       <ul class="xs">
