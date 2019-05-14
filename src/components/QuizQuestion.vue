@@ -9,8 +9,12 @@
         {{ op }}
       </button>
     </div>
-    <div class="levels">{{ currentLevel }} / {{ totalLevels }}</div>
-    <div class="author">LenguajeHTML.com</div>
+    <div class="levels">
+      {{ currentLevel }} / {{ totalLevels }}
+    </div>
+    <div class="author">
+      LenguajeHTML.com
+    </div>
     <time>{{ time | toHuman }}</time>
   </div>
 </template>

@@ -1,6 +1,8 @@
 <template>
   <div class="ending">
-    <h1 class="note">{{ calificationNote }}</h1>
+    <h1 class="note">
+      {{ calificationNote }}
+    </h1>
     <p>{{ customMessage }}</p>
     <p>Has obtenido un <strong>{{ calificationNumber }}</strong> y tardado <time>{{ totalTime | toHuman }}</time></p>
     <div class="grid">
@@ -17,7 +19,9 @@
         </div>
       </div>
     </div>
-    <div class="points">{{ score }}/{{ maxScore }}</div>
+    <div class="points">
+      {{ score }}/{{ maxScore }}
+    </div>
   </div>
 </template>
 

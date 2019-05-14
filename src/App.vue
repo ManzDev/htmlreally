@@ -1,8 +1,10 @@
 <template>
-  <div class="screen">
-    <quiz-starter v-if="currentPhase == 0"></quiz-starter>
-    <quiz-question v-if="currentPhase == 1"></quiz-question>
-    <quiz-ending v-if="currentPhase == 2"></quiz-ending>
+  <div class="container">
+    <div class="screen">
+      <quiz-starter v-if="currentPhase == 0"></quiz-starter>
+      <quiz-question v-if="currentPhase == 1"></quiz-question>
+      <quiz-ending v-if="currentPhase == 2"></quiz-ending>
+    </div>
   </div>
 </template>
 
@@ -24,7 +26,7 @@ export default {
     }
   },
   mounted() {
-    this.currentPhase = 0; // 1
+    this.currentPhase = 0;
   }
 }
 </script>
@@ -47,14 +49,30 @@ export default {
   }
 
   @media screen and (max-width: 800px) {
-    body {
+    .container {
+      background: var(--darkColor);
+      display: block;
       height: 100vh;
     }
 
+    .question .levels {
+      top: auto;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 0;
+      background: none;
+    }
+
     .screen {
-      width: 97%;
-      height: 100%;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .screen .question p {
       margin: 0;
+      padding: 2em 10px;
     }
   }
 </style>

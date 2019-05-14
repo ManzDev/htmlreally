@@ -4,26 +4,32 @@
       <h1>HTML5 is <span>easy</span>... Really?</h1>
       <p>¡Hola! Si estás por aquí, probablemente es por alguna de las siguientes razones:</p>
       <ul class="xs">
-        <li>Encontraste este minijuego en Internet (<em>¡desde un enlace HTML!</em>).</li>
-        <li>Conoces a <a href="https://twitter.com/Manz">Manz</a> y te ha dado la lata para que hagas este test.</li>
-        <li>Has dicho a alguien la frase <i>«¿HTML? ¡HTML es fácil!</i> y duda de tu criterio.</li>
-        <li>Has dicho a alguien la frase <i>«HTML no es un lenguaje de programación»</i>, y aunque eso es cierto, esta persona piensa que puedes estar menospreciando algo que quizás ni comprendes.</li>
+        <li><span>🙋‍♂️</span> Encontraste este minijuego en Internet (<em>¡desde un enlace HTML!</em>).</li>
+        <li><span>👨‍🎓</span> Conoces a <a href="https://twitter.com/Manz">Manz</a> y te ha dado la lata para que hagas este test.</li>
+        <li><span>🤷‍♂️</span> Has dicho a alguien la frase <i>«¿HTML? ¡HTML es fácil!</i> y duda de tu criterio.</li>
+        <li><span>🤦</span> Has dicho a alguien la frase <i>«HTML no es un lenguaje de programación»</i>, y aunque eso es cierto, esta persona piensa que puedes estar menospreciando algo que quizás ni comprendes.</li>
       </ul>
-      <button @click="next()">Siguiente</button>
+      <button @click="next()">
+        Siguiente
+      </button>
     </div>
     <div v-if="phase == 1">
-      <p class="xs">Efectivamente, HTML es un lenguaje de marcado (no un lenguaje de programación) y con dicho lenguaje está hecha la base de cualquier web. Aunque suelen ser mucho más difícil aprender programación, esto no implica automáticamente saber utilizar HTML adecuadamente.</p>
+      <p class="xs">
+        Efectivamente, HTML es un lenguaje de marcado (<i>no un lenguaje de programación</i>) y con dicho lenguaje está hecha la base de cualquier web. Aunque sea mucho más difícil aprender programación, <strong>saber programar no implica saber utilizar HTML adecuadamente</strong>.
+      </p>
 
       <ul class="xs">
-        <li>A continuación te aparecerán varias preguntas de respuesta múltiple.</li>
-        <li>Elige la respuesta correcta. ¡Sólo hay una!</li>
-        <li>Todas las preguntas son sobre HTML5 ¡Es muy fácil!</li>
-        <li>El tiempo importa, por lo que responde lo más rápido posible.</li>
+        <li><span>⏩</span> A continuación te aparecerán varias preguntas de respuesta múltiple.</li>
+        <li><span>🏆</span> Elige la respuesta correcta. ¡Sólo hay una correcta!</li>
+        <li><span>🙄</span> Todas las preguntas son sobre HTML5 ¡Es muy fácil! ¿O no?</li>
+        <li><span>⏲️</span> El tiempo importa, por lo que responde lo más rápido posible.</li>
       </ul>
 
-      <p>Saber HTML5 (su última versión) es sencillo. Dominar HTML5, no tanto... ¡Ahora tienes la oportunidad de demostrar que sabes!</p>
+      <p>Saber HTML5 (su última versión) es sencillo. Dominar HTML5, no tanto... ¡Ahora tienes la oportunidad de demostrar lo que sabes!</p>
 
-      <button @click="start()">¡Empezar!</button>
+      <button @click="start()">
+        ¡Empezar!
+      </button>
     </div>
   </div>
 </template>
@@ -47,7 +53,7 @@ export default {
 }
 </script>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
   h1 {
     margin: 0.8em 0;
   }
@@ -55,13 +61,23 @@ export default {
   h1 span {
     color: var(--lightColor);
     display: inline-block;
-    animation: fewSpin 1s ease-in-out infinite alternate;
+    animation: fewSpin 1.4s ease-in-out infinite alternate;
+  }
+
+  button {
+    margin-bottom: 2em;
   }
 
   ul {
     margin: 40px 0;
     text-align: left;
-    list-style-type: square;
+    list-style-type: none;
+    padding-left: 20px;
+
+    & span {
+      display: inline-block;
+      width: 30px;
+    }
   }
 
   .xs {
@@ -72,16 +88,16 @@ export default {
     font-family: var(--alternativeFont);
     font-weight: 700;
     letter-spacing: -1px;
-    color: #020000;
+    color: #3a0202;
   }
 
   @keyframes fewSpin {
     0% {
-      transform: rotate(-4deg);
+      transform: rotate(-8deg);
     }
 
     100% {
-      transform: rotate(4deg);
+      transform: rotate(8deg);
     }
   }
 
