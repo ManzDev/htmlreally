@@ -15,7 +15,12 @@
         <span v-if="isCorrect(i)">✔️</span>
         <span v-else>❌</span>
         <div class="progress">
-          <div class="fill" :style="{ width: `${ (times[i] * 100) / maxQuestionTime }%` }"></div>
+          <div class="fill"
+               :style="{
+                 width: `${ (times[i] * 100) / maxQuestionTime }%`,
+                 backgroundColor: color(times[i])
+               }"
+          ></div>
         </div>
       </div>
     </div>
@@ -41,7 +46,7 @@ export default {
       times: this.$root.times,
       answers: this.$root.answers,
       questions: this.$root.questions,
-      maxQuestionTime: 30,
+      maxQuestionTime: 60,
       calificationNumber: undefined
     }
   },
@@ -93,6 +98,9 @@ export default {
   methods: {
     isCorrect(i) {
       return this.answers[i] === this.questions[i].solution
+    },
+    color(value) {
+      return value > 60 ? 'red' : (value > 30 ? 'orange' : 'yellow');
     },
     safe(text, i) {
       return text.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '<hr>Respondiste: ' +
