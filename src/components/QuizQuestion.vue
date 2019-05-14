@@ -58,7 +58,6 @@ export default {
     }
   },
   mounted() {
-    console.log('Componente montado');
     this.currentLevel = 1;
     this.preCodeElement = this.$el.querySelector('.hint pre code');
     this.preCodeElement.classList.add('language-html');

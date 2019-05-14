@@ -24,6 +24,9 @@
         </div>
       </div>
     </div>
+    <div class="author">
+      <p>Creado por 🙋‍♂️ <a href="Manz">https://twitter.com/Manz</a> · 🌍 <a href="https://lenguajehtml.com/">LenguajeHTML</a></p>
+    </div>
     <div class="points">
       {{ score }}/{{ maxScore }}
     </div>
@@ -161,6 +164,12 @@ export default {
       width: 50%;
       height: 100%;
       background: yellow;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .container {
+      height: 100%;
     }
   }
 </style>
