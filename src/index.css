@@ -1,0 +1,83 @@
+@import url(https://fonts.googleapis.com/css?family=Lobster|Bitter:700|Nunito|Inconsolata);
+
+:root {
+  --headerFont: 'Lobster', fantasy;
+  --normalFont: Nunito, sans-serif;
+  --alternativeFont: Bitter, sans-serif;
+  --monoFont: Inconsolata, monospace;
+  --intenseColor: #ffc25b;
+  --lightColor: #ef652a;
+  --darkColor: #8f3b0a;
+
+  background: #000;
+  height: 88vh;
+  color: #eee;
+}
+
+body {
+  font-family: var(--normalFont);
+  font-size: 22px;
+  margin: 0;
+  background: url(./assets/background.jpg) no-repeat;
+  background-size: cover;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--headerFont);
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+  text-shadow:
+    1px 1px 8px var(--darkColor),
+    2px 2px 3px #000;
+}
+
+h1 {
+  font-size: 64px;
+}
+
+#titlebar {
+  background: #000;
+}
+
+a {
+  color: var(--intenseColor);
+
+  &:hover {
+    color: yellow;
+  }
+}
+
+em {
+  padding: 0 4px;
+}
+
+button {
+  font-family: var(--normalFont);
+  font-size: 1.25rem;
+  border: 2px solid var(--lightColor);
+  background: var(--darkColor);
+  margin: 10px;
+  padding: 4px 15px;
+  color: #fff;
+  user-select: none;
+
+  &:hover {
+    background: var(--lightColor);
+  }
+}
+
+.tippy-popper .tippy-content hr {
+  border: 0;
+  border-top: 1px solid #777;
+}
