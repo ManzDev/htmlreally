@@ -17,7 +17,7 @@
         <div class="progress">
           <div class="fill"
                :style="{
-                 width: `${ (times[i] * 100) / maxQuestionTime }%`,
+                 width: `${ Math.min((times[i] * 100) / maxQuestionTime, 100) }%`,
                  backgroundColor: color(times[i])
                }"
           ></div>
