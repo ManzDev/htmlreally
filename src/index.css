@@ -2,9 +2,9 @@
 
 :root {
   --headerFont: 'Lobster', fantasy;
-  --normalFont: Nunito, sans-serif;
-  --alternativeFont: Bitter, sans-serif;
-  --monoFont: Inconsolata, monospace;
+  --normalFont: nunito, sans-serif;
+  --alternativeFont: bitter, sans-serif;
+  --monoFont: inconsolata, monospace;
   --intenseColor: #ffc25b;
   --lightColor: #ef652a;
   --darkColor: #8f3b0a;
@@ -18,7 +18,7 @@ body {
   font-family: var(--normalFont);
   font-size: 22px;
   margin: 0;
-  background: url(./assets/background.jpg) no-repeat;
+  background: url(./assets/background.jpg) no-repeat 0 -140px;
   background-size: cover;
 }
 
@@ -82,7 +82,7 @@ button {
 
 @media screen and (max-width: 600px) {
   button {
-    padding: 15px 20px    
+    padding: 15px 20px;
   }
 }
 
