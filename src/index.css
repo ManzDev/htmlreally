@@ -80,6 +80,20 @@ button {
   }
 }
 
+@media screen and (max-width: 600px) {
+  button {
+    padding: 15px 20px    
+  }
+}
+
+body.mobile button:hover {
+  background: var(--darkColor);
+}
+
+body.mobile .container {
+  height: 100%;
+}
+
 .tippy-popper .tippy-content hr {
   border: 0;
   border-top: 1px solid #777;

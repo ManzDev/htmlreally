@@ -27,6 +27,9 @@ export default {
   },
   mounted() {
     this.currentPhase = 0;
+    // fix mobile hover
+    if (('ontouchstart' in document.documentElement))
+      document.body.classList.add('mobile');
   }
 }
 </script>
@@ -50,9 +53,12 @@ export default {
 
   @media screen and (max-width: 800px) {
     .container {
-      background: var(--darkColor);
       display: block;
       height: 100vh;
+    }
+
+    .question {
+      min-height: 100vh;
     }
 
     .question .levels {
@@ -68,11 +74,16 @@ export default {
       border: 0;
       background: transparent;
       box-shadow: none;
+      background: var(--darkColor);
     }
 
     .screen .question p {
       margin: 0;
       padding: 2em 10px;
+    }
+
+    .author {
+      display: none;
     }
   }
 </style>
