@@ -1,51 +1,33 @@
 {
   "name": "htmlreally",
-  "version": "1.0.0",
-  "description": "A HTML5 quiz to test your knowledge",
-  "main": "src/index.html",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "npx eslint src/*",
-    "dev": "parcel serve src/index.html",
-    "watch": "parcel watch src/index.html",
-    "build": "rm -rf build/* && parcel build src/index.html --no-source-maps -d build --global global --public-url /htmlreally",
-    "clean:cache": "rm -rf .cache dist build",
-    "clean:all": "rm -rf node_modules package-lock.json .cache dist build",
-    "deploy": "gh-pages -d build"
+    "dev": "vite",
+    "build": "rm -rf dist && vite build",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
-  "keywords": [
-    "html",
-    "html5",
-    "test",
-    "quiz"
-  ],
-  "author": "Manz",
-  "license": "ISC",
   "devDependencies": {
-    "@babel/cli": "^7.10.5",
-    "@babel/core": "^7.11.0",
-    "@babel/preset-env": "^7.11.0",
-    "@vue/component-compiler-utils": "^3.2.0",
-    "autoprefixer": "^9.8.6",
-    "cross-env": "^7.0.2",
-    "cssnano": "^4.1.10",
-    "eslint": "^7.5.0",
-    "eslint-config-standard": "^14.1.1",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "eslint-plugin-vue": "^6.2.2",
-    "gh-pages": "^3.1.0",
-    "npm-run-all": "^4.1.5",
-    "parcel-bundler": "^1.12.4",
-    "postcss-preset-env": "^6.7.0",
-    "stylelint-config-standard": "^20.0.0",
-    "vue-hot-reload-api": "^2.3.4",
-    "vue-template-compiler": "^2.6.11"
+    "@vitejs/plugin-vue": "^4.0.0",
+    "eslint": "^8.35.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "gh-pages": "^5.0.0",
+    "postcss": "^8.4.21",
+    "postcss-nesting": "^11.2.1",
+    "stylelint": "15.2.0",
+    "stylelint-config-standard": "30.0.1",
+    "vite": "^4.1.0"
   },
+  "keywords": [],
+  "license": "ISC",
   "dependencies": {
-    "prismjs": "^1.20.0",
-    "tippy.js": "^4.3.5",
-    "vue": "^2.6.11"
+    "prismjs": "^1.29.0",
+    "tippy.js": "^6.3.7",
+    "vue": "^3.2.47"
   }
 }
