@@ -1,12 +1,11 @@
 {
-    "extends": [
-        "stylelint-config-standard"
-    ],
-    "rules": {
-        "selector-nested-pattern": "^&",
-        "indentation": 2,
-        "no-descending-specificity": null,
-        "no-eol-whitespace": null,
-        "declaration-empty-line-before": null
+  "extends": "stylelint-config-standard",
+  "overrides": [
+    {
+      "files": ["**/*.css"]
     }
+  ],
+  "rules": {
+    "declaration-property-value-no-unknown": true
+  }
 }
