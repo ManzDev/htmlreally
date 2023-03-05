@@ -1,13 +1,13 @@
-@import url(https://fonts.googleapis.com/css?family=Lobster|Bitter:700|Nunito|Inconsolata);
+@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@700&family=Inconsolata&family=Lobster&family=Nunito&display=swap");
 
 :root {
-  --headerFont: 'Lobster', fantasy;
-  --normalFont: nunito, sans-serif;
-  --alternativeFont: bitter, sans-serif;
-  --monoFont: inconsolata, monospace;
-  --intenseColor: #ffc25b;
-  --lightColor: #ef652a;
-  --darkColor: #8f3b0a;
+  --header-font: "Lobster", fantasy;
+  --normal-font: nunito, sans-serif;
+  --alternative-font: bitter, sans-serif;
+  --mono-font: inconsolata, monospace;
+  --intense-color: #ffc25b;
+  --light-color: #ef652a;
+  --dark-color: #8f3b0a;
 
   background: #000;
   height: 88vh;
@@ -15,10 +15,10 @@
 }
 
 body {
-  font-family: var(--normalFont);
+  font-family: var(--normal-font);
   font-size: 22px;
   margin: 0;
-  background: url(./assets/background.jpg) no-repeat 0 -140px;
+  background: url("background.jpg") no-repeat 0 -140px;
   background-size: cover;
 }
 
@@ -36,25 +36,19 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--headerFont);
+  font-family: var(--header-font);
   font-weight: 400;
   text-align: center;
   margin: 0;
-  text-shadow:
-    1px 1px 8px var(--darkColor),
-    2px 2px 3px #000;
+  text-shadow: 1px 1px 8px var(--dark-color), 2px 2px 3px #000;
 }
 
 h1 {
   font-size: 64px;
 }
 
-#titlebar {
-  background: #000;
-}
-
 a {
-  color: var(--intenseColor);
+  color: var(--intense-color);
 
   &:hover {
     color: yellow;
@@ -66,17 +60,17 @@ em {
 }
 
 button {
-  font-family: var(--normalFont);
+  font-family: var(--normal-font);
   font-size: 1.25rem;
-  border: 2px solid var(--lightColor);
-  background: var(--darkColor);
+  border: 2px solid var(--light-color);
+  background: var(--dark-color);
   margin: 10px;
   padding: 4px 15px;
   color: #fff;
   user-select: none;
 
   &:hover {
-    background: var(--lightColor);
+    background: var(--light-color);
   }
 }
 
@@ -87,14 +81,25 @@ button {
 }
 
 body.mobile button:hover {
-  background: var(--darkColor);
+  background: var(--dark-color);
 }
 
 body.mobile .container {
   height: 100%;
 }
 
-.tippy-popper .tippy-content hr {
+/* Custom Tippy */
+
+.tippy-box .tippy-content {
+  background-color: #111;
+  padding: 15px;
+}
+
+.tippy-box .tippy-arrow {
+  color: #111;
+}
+
+.tippy-box .tippy-content hr {
   border: 0;
   border-top: 1px solid #777;
 }
