@@ -19,6 +19,7 @@ export default {
 
 <template>
   <div class="starter">
+
     <div v-if="phase == 0">
       <h1>HTML5 is <span>easy</span>... Really?</h1>
       <p>
@@ -49,6 +50,7 @@ export default {
       </ul>
       <button @click="next()">Siguiente</button>
     </div>
+
     <div v-if="phase == 1">
       <p class="xs">
         Efectivamente, HTML es un lenguaje de marcado
@@ -94,6 +96,7 @@ export default {
 
       <button @click="start()">¡Empezar!</button>
     </div>
+
   </div>
 </template>
 

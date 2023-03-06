@@ -118,8 +118,9 @@ export default {
       </div>
     </div>
     <div class="author">
+      <p>¡Sígueme en <a href="https://twitch.tv/ManzDev">Twitch</a>!</p>
       <p>
-        Creado por 🙋‍♂️ <a href="https://twitter.com/Manz">Manz</a> · 🌍
+        Creado por 🙋‍♂️ <a href="https://manz.dev/">Manz.dev</a> · 🌍
         <a href="https://lenguajehtml.com/">LenguajeHTML</a>
       </p>
     </div>
@@ -155,7 +156,7 @@ h1 {
 
 .grid {
   max-width: 800px;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 5px;

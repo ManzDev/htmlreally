@@ -18,7 +18,9 @@ body {
   font-family: var(--normal-font);
   font-size: 22px;
   margin: 0;
-  background: url("background.jpg") no-repeat 0 -140px;
+  background-image: url("background.jpg");
+  background-repeat: no-repeat;
+  background-position: 0 -140px;
   background-size: cover;
 }
 
