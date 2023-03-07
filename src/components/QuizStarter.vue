@@ -1,5 +1,4 @@
 <script>
-// import snarkdown from "snarkdown";
 import MarkdownIt from "markdown-it";
 
 const md = new MarkdownIt({ html: true });
@@ -49,70 +48,4 @@ export default {
   </div>
 </template>
 
-<style>
-h1 {
-  margin: 0.8em 0;
-}
-
-h1 em {
-  color: var(--light-color);
-  display: inline-block;
-  font-family: var(--header-font);
-  font-weight: normal;
-  font-style: normal;
-  animation: fewSpin 1.4s ease-in-out infinite alternate;
-}
-
-.starter button {
-  margin-bottom: 2em;
-}
-
-br {
-  margin-bottom: 2em;
-}
-
-ul {
-  margin: 40px 0;
-  text-align: left;
-  list-style-type: none;
-  padding-left: 20px;
-
-  & em {
-    display: inline-block;
-  }
-}
-
-mark {
-  background: none;
-  color: white;
-  text-decoration-style: wavy;
-  text-decoration-color: var(--intense-color);
-  text-decoration-line: underline;
-}
-
-strong {
-  color: var(--intense-color);
-}
-
-ul {
-  font-size: 1.2rem;
-}
-
-em {
-  display: inline-block;
-  font-family: var(--alternative-font);
-  font-weight: 700;
-  letter-spacing: -1px;
-  color: #3a0202;
-}
-
-@keyframes fewSpin {
-  0% {
-    transform: rotate(-8deg);
-  }
-
-  100% {
-    transform: rotate(8deg);
-  }
-}
-</style>
+<style src="./QuizStarter.css"></style>

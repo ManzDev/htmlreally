@@ -1,0 +1,60 @@
+h1 {
+  margin: 0.8em 0;
+}
+
+.starter button {
+  margin-bottom: 2em;
+}
+
+br {
+  margin-bottom: 2em;
+}
+
+ul {
+  margin: 40px 0;
+  text-align: left;
+  list-style-type: none;
+  padding-left: 20px;
+  font-size: 1.2rem;
+}
+
+mark {
+  background: none;
+  color: white;
+  text-decoration: underline wavy var(--intense-color);
+}
+
+strong {
+  color: var(--intense-color);
+}
+
+em {
+  display: inline-block;
+  font-family: var(--alternative-font);
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: #3a0202;
+}
+
+h1 em {
+  color: var(--light-color);
+  display: inline-block;
+  font-family: var(--header-font);
+  font-weight: normal;
+  font-style: normal;
+  animation: few-spin 1.4s ease-in-out infinite alternate;
+}
+
+ul em {
+  display: inline-block;
+}
+
+@keyframes few-spin {
+  0% {
+    transform: rotate(-8deg);
+  }
+
+  100% {
+    transform: rotate(8deg);
+  }
+}
