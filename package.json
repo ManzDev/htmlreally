@@ -26,6 +26,7 @@
   "keywords": [],
   "license": "ISC",
   "dependencies": {
+    "markdown-it": "^13.0.1",
     "prismjs": "^1.29.0",
     "tippy.js": "^6.3.7",
     "vue": "^3.2.47"

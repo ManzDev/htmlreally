@@ -1,13 +1,21 @@
 <script>
-import trophy from "../assets/trophy.svg?raw";
+// import snarkdown from "snarkdown";
+import MarkdownIt from "markdown-it";
+
+const md = new MarkdownIt({ html: true });
+import start1 from "../assets/start-1.md?raw";
+import start2 from "../assets/start-2.md?raw";
+import start3 from "../assets/start-3.md?raw";
 
 export default {
   name: "QuizStarter",
   data() {
     return {
       phase: 0,
-      icons: {
-        trophy,
+      text: {
+        start1: md.render(start1),
+        start2: md.render(start2),
+        start3: md.render(start3),
       },
     };
   },
@@ -25,101 +33,41 @@ export default {
 <template>
   <div class="starter">
     <div v-if="phase == 0">
-      <h1>HTML5 is <span>easy</span>... Really?</h1>
-      <p>¡Hola! Probablemente llegaste aquí por alguna de estas razones:</p>
-      <ul class="xs">
-        <li>
-          <span>🙋‍♂️</span> Encontraste este minijuego en Internet (<em
-            >¡desde un enlace HTML!</em
-          >).
-        </li>
-        <li>
-          <span>👨‍🎓</span> Conoces a
-          <a href="https://twitter.com/Manz">Manz</a> y te ha insistido para que
-          hagas este test.
-        </li>
-        <li>
-          <span>🤷‍♂️</span> Has dicho a alguien la frase
-          <i>«¿HTML? ¡HTML es fácil!</i> y duda de tu criterio.
-        </li>
-        <li>
-          <span>🤦</span> Has dicho a alguien la frase
-          <i>«HTML no es un lenguaje de programación»</i>, y aunque eso es
-          cierto, esta persona piensa que podrías estar menospreciando algo que
-          quizás no comprendes.
-        </li>
-      </ul>
-      <button @click="next()">Siguiente</button>
+      <div v-html="text.start1"></div>
+      <button @click="next()">Me interesa... ➜</button>
     </div>
 
     <div v-if="phase == 1">
-      <h1>HTML5 is <span>easy</span>... Really?</h1>
-      <p class="xs">
-        Efectivamente, HTML es un lenguaje de marcado
-        <i>—no de programación—</i> y con dicho lenguaje está hecha la base de
-        <mark>cualquier web</mark>.
-      </p>
-
-      <p class="xs">
-        Aunque sea mucho más difícil aprender programación,
-        <strong
-          >saber programar no implica saber escribir HTML adecuadamente</strong
-        >: semántica, SEO, sintaxis, fallbacks, código obsoleto, compatibilidad
-        entre navegadores, malas prácticas...
-      </p>
-      <p>
-        A continuación iniciaremos un test con varias preguntas, donde cada una
-        tiene múltiples respuestas.
-      </p>
-      <button @click="next()">Siguiente</button>
+      <div v-html="text.start2"></div>
+      <button @click="next()">Instrucciones ➜</button>
     </div>
 
     <div v-if="phase == 2">
-      <p>¡IMPORTANTE, ANTES DE EMPEZAR!</p>
-      <ul class="xs">
-        <li>
-          <span>🏆</span> Elige la respuesta adecuada... ¡Sólo hay una correcta!
-        </li>
-        <li>
-          <span>🙄</span> Todas las preguntas son sobre HTML5 ¡Es muy fácil! ¿O
-          no?
-        </li>
-        <li>
-          <span>🔨</span> OJO: Es un <strong>test de estrés</strong> (50
-          preguntas). Tardarás unos 10-15min.
-        </li>
-        <li>
-          <span>⏲️</span> El tiempo importa, por lo que si tardas mucho, contará
-          menos.
-        </li>
-        <li>
-          <span>📋</span> Al final del test, aparecerá un resumen de los
-          aciertos y errores.
-        </li>
-      </ul>
-
-      <p>
-        Saber HTML5 (su última versión) es sencillo. Dominar HTML5, no tanto...
-        ¡Ahora tienes la oportunidad de demostrar lo que sabes!
-      </p>
-
-      <button @click="start()">¡Empezar!</button>
+      <div v-html="text.start3"></div>
+      <button @click="start()">¡Empezar! ➜</button>
     </div>
   </div>
 </template>
 
-<style scoped>
+<style>
 h1 {
   margin: 0.8em 0;
 }
 
-h1 span {
+h1 em {
   color: var(--light-color);
   display: inline-block;
+  font-family: var(--header-font);
+  font-weight: normal;
+  font-style: normal;
   animation: fewSpin 1.4s ease-in-out infinite alternate;
 }
 
-button {
+.starter button {
+  margin-bottom: 2em;
+}
+
+br {
   margin-bottom: 2em;
 }
 
@@ -129,9 +77,8 @@ ul {
   list-style-type: none;
   padding-left: 20px;
 
-  & span {
+  & em {
     display: inline-block;
-    width: 30px;
   }
 }
 
@@ -146,11 +93,13 @@ mark {
 strong {
   color: var(--intense-color);
 }
-.xs {
+
+ul {
   font-size: 1.2rem;
 }
 
-i {
+em {
+  display: inline-block;
   font-family: var(--alternative-font);
   font-weight: 700;
   letter-spacing: -1px;
