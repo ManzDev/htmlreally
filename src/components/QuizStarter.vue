@@ -1,9 +1,14 @@
 <script>
+import trophy from "../assets/trophy.svg?raw";
+
 export default {
   name: "QuizStarter",
   data() {
     return {
       phase: 0,
+      icons: {
+        trophy,
+      },
     };
   },
   methods: {
@@ -19,13 +24,9 @@ export default {
 
 <template>
   <div class="starter">
-
     <div v-if="phase == 0">
       <h1>HTML5 is <span>easy</span>... Really?</h1>
-      <p>
-        ¡Hola! Si has llegado hasta aquí, probablemente ha sido por alguna de
-        las siguientes razones:
-      </p>
+      <p>¡Hola! Probablemente llegaste aquí por alguna de estas razones:</p>
       <ul class="xs">
         <li>
           <span>🙋‍♂️</span> Encontraste este minijuego en Internet (<em
@@ -52,22 +53,30 @@ export default {
     </div>
 
     <div v-if="phase == 1">
+      <h1>HTML5 is <span>easy</span>... Really?</h1>
       <p class="xs">
         Efectivamente, HTML es un lenguaje de marcado
-        <i>—no un lenguaje de programación—</i> y con dicho lenguaje está hecha
-        la base de cualquier web. Aunque sea mucho más difícil aprender
-        programación,
+        <i>—no de programación—</i> y con dicho lenguaje está hecha la base de
+        <mark>cualquier web</mark>.
+      </p>
+
+      <p class="xs">
+        Aunque sea mucho más difícil aprender programación,
         <strong
           >saber programar no implica saber escribir HTML adecuadamente</strong
         >: semántica, SEO, sintaxis, fallbacks, código obsoleto, compatibilidad
         entre navegadores, malas prácticas...
       </p>
+      <p>
+        A continuación iniciaremos un test con varias preguntas, donde cada una
+        tiene múltiples respuestas.
+      </p>
+      <button @click="next()">Siguiente</button>
+    </div>
 
+    <div v-if="phase == 2">
+      <p>¡IMPORTANTE, ANTES DE EMPEZAR!</p>
       <ul class="xs">
-        <li>
-          <span>⏩</span> A continuación te aparecerán varias preguntas de
-          respuesta múltiple.
-        </li>
         <li>
           <span>🏆</span> Elige la respuesta adecuada... ¡Sólo hay una correcta!
         </li>
@@ -80,8 +89,8 @@ export default {
           preguntas). Tardarás unos 10-15min.
         </li>
         <li>
-          <span>⏲️</span> El tiempo importa, por lo que responde lo más rápido
-          posible.
+          <span>⏲️</span> El tiempo importa, por lo que si tardas mucho, contará
+          menos.
         </li>
         <li>
           <span>📋</span> Al final del test, aparecerá un resumen de los
@@ -96,7 +105,6 @@ export default {
 
       <button @click="start()">¡Empezar!</button>
     </div>
-
   </div>
 </template>
 
@@ -127,6 +135,17 @@ ul {
   }
 }
 
+mark {
+  background: none;
+  color: white;
+  text-decoration-style: wavy;
+  text-decoration-color: var(--intense-color);
+  text-decoration-line: underline;
+}
+
+strong {
+  color: var(--intense-color);
+}
 .xs {
   font-size: 1.2rem;
 }
