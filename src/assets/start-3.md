@@ -1,6 +1,6 @@
-**¡IMPORTANTE, ANTES DE EMPEZAR!**
+# Importante
 
-Presta atención a los siguientes detalles:
+Antes de empezar, presta atención a los siguientes detalles:
 
 - 🏆 Elige la respuesta adecuada... ¡Sólo hay una correcta!
 - 🙄 Todas las preguntas son sobre HTML5 ¡Es muy fácil! ¿O no?
