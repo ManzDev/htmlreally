@@ -58,3 +58,9 @@ ul em {
     transform: rotate(8deg);
   }
 }
+
+@media screen and (max-width: 800px) {
+  .screen {
+    height: 100%;
+  }
+}
