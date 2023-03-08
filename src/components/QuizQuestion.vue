@@ -4,6 +4,9 @@ import { toHuman } from "../modules/toHuman.js";
 import "prismjs/themes/prism-okaidia.css";
 import "prismjs/components/prism-markup.min.js";
 
+const MIN_TIME = 30;
+const MAX_TIME = 60;
+
 export default {
   name: "QuizQuestion",
   data() {
@@ -19,6 +22,18 @@ export default {
       time: 0,
       timer: undefined,
     };
+  },
+  computed: {
+    questionColor() {
+      return this.time > MAX_TIME
+        ? "orangered"
+        : this.time > MIN_TIME
+        ? "orange"
+        : "gold";
+    },
+    questionPercent() {
+      return Math.max(0, 100 - this.time) + "%";
+    },
   },
   watch: {
     currentLevel() {
@@ -42,9 +57,7 @@ export default {
       Prism.highlightElement(this.preCodeElement);
       this.time = 0;
       if (this.timer) clearInterval(this.timer);
-      this.timer = setInterval(() => {
-        this.time++;
-      }, 1000);
+      this.timer = setInterval(() => this.time++, 1000);
     },
     toHuman(arg) {
       return toHuman(arg);
@@ -53,9 +66,8 @@ export default {
       this.$root.times.push(this.time);
       this.$root.answers.push(pressed);
       if (pressed === this.solution) {
-        if (this.time > 60) this.$root.score += 5;
-        else if (this.time > 30) this.$root.score += 10;
-        // <= 30
+        if (this.time > MAX_TIME) this.$root.score += 5;
+        else if (this.time > MIN_TIME) this.$root.score += 10;
         else this.$root.score += 20;
       }
       this.currentLevel++;
@@ -71,6 +83,12 @@ export default {
 <template>
   <div class="question">
     <p>{{ question }}</p>
+    <div class="progress-bar">
+      <div
+        class="fill-bar"
+        :style="{ backgroundColor: questionColor, width: questionPercent }"
+      ></div>
+    </div>
     <div class="hint">
       <pre class="highlight"><code></code></pre>
     </div>
