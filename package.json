@@ -19,7 +19,7 @@
     "gh-pages": "^5.0.0",
     "postcss": "^8.4.21",
     "postcss-nesting": "^11.2.1",
-    "stylelint": "15.2.0",
+    "stylelint": "15.10.1",
     "stylelint-config-standard": "30.0.1",
     "vite": "^4.1.0"
   },
